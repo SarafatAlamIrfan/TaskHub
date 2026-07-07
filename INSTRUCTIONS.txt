@@ -1,0 +1,67 @@
+================================================================
+       TASKHUB - STEP-BY-STEP RUN INSTRUCTIONS
+================================================================
+
+PART 1: SERVER SETUP
+----------------------------------------------------------------
+1. Download and Install XAMPP (from apachefriends.org).
+2. Open the "XAMPP Control Panel".
+3. Click the "Start" button next to [Apache].
+4. Click the "Start" button next to [MySQL].
+5. Ensure both modules turn GREEN.
+
+PART 2: FOLDER PLACEMENT
+----------------------------------------------------------------
+6. Locate the "taskhub" folder containing your project files.
+7. Copy the entire "taskhub" folder.
+8. Navigate to your XAMPP installation folder:
+   - Windows: C:\xampp\htdocs\
+   - Mac: /Applications/XAMPP/xamppfiles/htdocs/
+9. Paste the "taskhub" folder inside "htdocs".
+   (Final Path should look like: C:\xampp\htdocs\taskhub)
+
+PART 3: DATABASE CONFIGURATION
+----------------------------------------------------------------
+10. Open your web browser (Chrome, Edge, etc.).
+11. Type this URL and press Enter: http://localhost/phpmyadmin
+12. On the left sidebar, click "New".
+13. In the "Database name" box, type exactly: taskhub_db
+14. Click the "Create" button.
+15. Click on the "Import" tab (top menu bar).
+16. Click "Choose File" and select the "database.sql" file from your "taskhub" folder.
+17. Scroll down and click "Go".
+18. You should see a green success message.
+
+PART 4: RUNNING THE APPLICATION
+----------------------------------------------------------------
+19. Make sure your computer is connected to the Internet.
+    (Required for loading the Design/CSS styles).
+20. Open a new tab in your browser.
+21. Type this URL: http://localhost/taskhub
+22. You should see the Login Screen.
+
+PART 5: HOW TO LOG IN
+----------------------------------------------------------------
+OPTION A: ADMIN LOGIN (To create tasks)
+   - Email:    admin@taskhub.com
+   - Password: password
+   (If this fails, see Troubleshooting below).
+
+OPTION B: MEMBER LOGIN (To view tasks)
+   - Click "Register here" on the login page.
+   - Create a new account (e.g., "Student Name").
+   - Login with your new email and password.
+
+PART 6: TROUBLESHOOTING
+----------------------------------------------------------------
+- If you see "Database connection failed":
+  Open "includes/db.php" and check line 6: $dbname = 'taskhub_db';
+
+- If you see "404 Not Found":
+  Make sure your folder name in htdocs is exactly "taskhub".
+
+- If the Admin password does not work:
+  1. Register a new user via the Register page.
+  2. Go to http://localhost/phpmyadmin
+  3. Click "taskhub_db" > "users" table.
+  4. Find your new user and change the 'role' column from 'member' to 'admin'.
