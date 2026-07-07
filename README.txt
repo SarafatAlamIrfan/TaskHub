@@ -1,75 +1,82 @@
-=====================================================================
-PROJET NAME:  TaskHub - Group Task Management System
-TYPE:         Web Application (PHP / MySQL)
-DATE:         December 2025
-=====================================================================
+# TaskHub - Group Task Management System
 
-[1] PROJECT OVERVIEW
----------------------------------------------------------------------
-TaskHub is a web-based collaboration tool designed to help student 
-groups and teams manage tasks efficiently. It features a secure 
-login system, role-based access control (Admin vs. Member), and 
-real-time task tracking (Pending, In Progress, Completed).
+TaskHub is a lightweight, web-based collaboration tool designed to help student groups and teams manage tasks efficiently. It features a secure authentication system, role-based access control, and dynamic task tracking across different development stages.
 
-[2] TECHNOLOGIES USED
----------------------------------------------------------------------
-- Frontend: HTML5, Tailwind CSS (via CDN), FontAwesome Icons
-- Backend:  PHP (Vanilla/Native)
-- Database: MySQL (Relational DB)
-- Server:   Apache (via XAMPP)
+---
 
-[3] DIRECTORY STRUCTURE
----------------------------------------------------------------------
+## 🚀 Features
+* **Secure Authentication:** User registration and secure login system.
+* **Role-Based Access Control (RBAC):** Distinct interfaces and permissions for **Admins** and **Members**.
+* **Real-Time Task Tracking:** Monitor tasks seamlessly through status states: `Pending`, `In Progress`, and `Completed`.
+* **Modern UI:** Responsive design built using Tailwind CSS and FontAwesome icons.
+
+---
+
+## 🛠️ Technologies Used
+* **Frontend:** HTML5, Tailwind CSS (via CDN), FontAwesome Icons
+* **Backend:** PHP (Vanilla/Native)
+* **Database:** MySQL (Relational DB)
+* **Server:** Apache (via XAMPP)
+
+---
+
+## 📂 Directory Structure
+```text
 /taskhub
   ├── /actions       # Logic files (Login, Register, Create Task)
   ├── /includes      # Database connection (db.php)
   ├── /css           # Stylesheets
   ├── /js            # JavaScript files
   ├── index.php      # Login Page
-  ├── dashboard.php  # Main Dashboard (Changes based on Role)
-  └── database.sql   # SQL file to setup database
+  └── dashboard.php  # Main Dashboard (Changes based on Role)
 
-[4] INSTALLATION STEPS
----------------------------------------------------------------------
-1. Install XAMPP (Apache & MySQL).
-2. Copy the 'taskhub' folder to your 'htdocs' directory.
-   (Windows: C:\xampp\htdocs\taskhub)
-   (Mac: /Applications/XAMPP/xamppfiles/htdocs/taskhub)
-3. Open XAMPP Control Panel and Start 'Apache' and 'MySQL'.
+💻 Installation & Setup
+1. Prerequisites
+Ensure you have XAMPP (or a similar Apache/MySQL stack) installed on your system.
 
-[5] DATABASE SETUP
----------------------------------------------------------------------
-1. Open your browser and go to: http://localhost/phpmyadmin
-2. Click "New" and create a database named: taskhub_db
-3. Click on the "Import" tab.
-4. Choose the file 'database.sql' from the project folder.
-5. Click "Go" to create the tables.
+2. Project Setup
+Clone or download this repository.
 
-[6] LOGIN CREDENTIALS (TEST ACCOUNTS)
----------------------------------------------------------------------
-The system comes with a pre-configured Admin account.
+Move the taskhub folder into your local server's root directory (htdocs):
 
-(A) ADMIN ACCOUNT (Full Access)
-    Email:    admin@taskhub.com
-    Password: password
-    *Role: Can create tasks, view all tasks, see user stats.*
+Windows: C:\xampp\htdocs\taskhub
 
-(B) MEMBER ACCOUNT (Restricted Access)
-    *Please Register a new user on the Login page to test this.*
-    *Role: Can only view assigned tasks and update status.*
+Mac: /Applications/XAMPP/xamppfiles/htdocs/taskhub
 
-[7] TROUBLESHOOTING
----------------------------------------------------------------------
-- Issue: "Connection Failed"
-  Fix: Open /includes/db.php and check if $user='root' and $pass=''.
+Launch the XAMPP Control Panel and start both Apache and MySQL.
 
-- Issue: "404 Not Found"
-  Fix: Ensure the folder name in htdocs is exactly 'taskhub'.
+3. Database Configuration
+Open your web browser and navigate to: http://localhost/phpmyadmin
 
-- Issue: CSS not loading
-  Fix: Ensure you have an active internet connection (Tailwind loads 
-  from the web).
+Create a new database named taskhub_db.
 
-=====================================================================
-Developed by: 
-=====================================================================
+Select the taskhub_db database, click on the Import tab.
+
+Choose the database.sql file located in your project root directory.
+
+Click Go (or Import) to execute the queries and build the tables.
+
+🔑 Test Credentials
+The database script initializes a default Admin account for testing purposes:
+
+Admin Account (Full Access)
+Email: admin@taskhub.com
+
+Password: password
+
+Permissions: Can create tasks, view all team tasks, and view global user statistics.
+
+Member Account (Restricted Access)
+To test a standard team member profile, please use the Register feature on the login page.
+
+Permissions: Can view only their individually assigned tasks and update task completion status.
+
+🛠️ Troubleshooting
+"Connection Failed" Error: Open /includes/db.php and verify that your local database credentials match your server environment (Default XAMPP configuration is usually $user='root' and $pass='').
+
+"404 Not Found" Error: Ensure that the repository folder name inside htdocs is written in lowercase exactly as taskhub.
+
+Styles/CSS Layout Not Loading: This application utilizes Tailwind CSS via a Content Delivery Network (CDN). Make sure your development machine has an active internet connection to load the styles correctly.
+
+📝 License
+All Rights Reserved.
